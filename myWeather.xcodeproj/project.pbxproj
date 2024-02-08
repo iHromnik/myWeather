@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		308CC3F02B74C46D00587D53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308CC3EF2B74C46D00587D53 /* AppDelegate.swift */; };
 		308CC3F22B74C46D00587D53 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308CC3F12B74C46D00587D53 /* SceneDelegate.swift */; };
-		308CC3F42B74C46D00587D53 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308CC3F32B74C46D00587D53 /* ViewController.swift */; };
+		308CC3F42B74C46D00587D53 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308CC3F32B74C46D00587D53 /* LoginViewController.swift */; };
 		308CC3F72B74C46D00587D53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 308CC3F52B74C46D00587D53 /* Main.storyboard */; };
 		308CC3FA2B74C46D00587D53 /* myWeather.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 308CC3F82B74C46D00587D53 /* myWeather.xcdatamodeld */; };
 		308CC3FC2B74C46F00587D53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 308CC3FB2B74C46F00587D53 /* Assets.xcassets */; };
@@ -40,7 +40,7 @@
 		308CC3EC2B74C46D00587D53 /* myWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		308CC3EF2B74C46D00587D53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		308CC3F12B74C46D00587D53 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		308CC3F32B74C46D00587D53 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		308CC3F32B74C46D00587D53 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		308CC3F62B74C46D00587D53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		308CC3F92B74C46D00587D53 /* myWeather.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = myWeather.xcdatamodel; sourceTree = "<group>"; };
 		308CC3FB2B74C46F00587D53 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -103,7 +103,7 @@
 			children = (
 				308CC3EF2B74C46D00587D53 /* AppDelegate.swift */,
 				308CC3F12B74C46D00587D53 /* SceneDelegate.swift */,
-				308CC3F32B74C46D00587D53 /* ViewController.swift */,
+				308CC3F32B74C46D00587D53 /* LoginViewController.swift */,
 				308CC3F52B74C46D00587D53 /* Main.storyboard */,
 				308CC3FB2B74C46F00587D53 /* Assets.xcassets */,
 				308CC3FD2B74C46F00587D53 /* LaunchScreen.storyboard */,
@@ -262,7 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				308CC3FA2B74C46D00587D53 /* myWeather.xcdatamodeld in Sources */,
-				308CC3F42B74C46D00587D53 /* ViewController.swift in Sources */,
+				308CC3F42B74C46D00587D53 /* LoginViewController.swift in Sources */,
 				308CC3F02B74C46D00587D53 /* AppDelegate.swift in Sources */,
 				308CC3F22B74C46D00587D53 /* SceneDelegate.swift in Sources */,
 			);
@@ -448,6 +448,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = myWeather/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = myWeather;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -475,6 +476,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = myWeather/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = myWeather;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
