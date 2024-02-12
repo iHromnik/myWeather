@@ -10,8 +10,8 @@ import UIKit
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var loginTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var loginInput: UITextField!
+    @IBOutlet weak var passwordInput: UITextField!
   
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +27,37 @@ class LoginViewController: UIViewController {
         super.viewWillDisappear(animated)
     NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
     NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        
+        
+    let checkResult = checkUserData()
+        
+        if !checkResult {
+            showLoginError()
+        }
+            return checkResult
+    }
+    
+    func checkUserData() -> Bool {
+        guard let login = loginInput.text,
+              let password = passwordInput.text else {return false}
+        if login == "1" && password == "1" {
+            return true
+        } else {
+  
+            return false
+        }
+        
+        
+    }
+    
+    func showLoginError() {
+        let alert = UIAlertController(title: "Error", message: "Wrong password", preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .cancel)
+        alert.addAction(action)
+        present(alert, animated: true)
     }
     
             @objc func keyboardWillShow(notification: Notification) {
