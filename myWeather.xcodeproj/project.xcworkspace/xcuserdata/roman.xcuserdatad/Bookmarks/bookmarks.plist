@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>top-level-items</key>
+	<array>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>5</string>
+					<key>EndingLineNumber</key>
+					<string>109</string>
+					<key>StartingColumnNumber</key>
+					<string>0</string>
+					<key>StartingLineNumber</key>
+					<string>75</string>
+					<key>Timestamp</key>
+					<string>735225136.124854</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>myWeather/Weather/WeatherViewController.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string>    override func prepare() {
+        self.cachAttributes = [:]
+        guard let collectionView = self.collectionView else { return }
+        
+        let itemsCount = collectionView.numberOfItems(inSection: 0)
+        guard itemsCount &gt; 0 else { return }
+        let bigCellWidth = collectionView.frame.width
+        let smallCellWidth = collectionView.frame.width / CGFloat(self.columnsCount)
+        
+        var lastY: CGFloat = 0
+        var lastX: CGFloat = 0
+        
+        for index in 0..&lt;itemsCount {
+            let indexPath = IndexPath(item: index, section: 0)
+            let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
+            let isBigCell = (index + 1) % (self.columnsCount + 1) == 0
+            
+            if isBigCell {
+                attributes.frame = CGRect(x: 0, y: Int(lastY), width: Int(bigCellWidth), height: Int(self.cellHeight))
+                lastY += self.cellHeight
+            } else {
+                attributes.frame = CGRect(x: Int(lastX), y: Int(lastY), width: Int(smallCellWidth), height: Int(self.cellHeight))
+                let isLastColumn = (index + 2) % (self.columnsCount + 1) == 0 || index == itemsCount - 1
+                
+                if isLastColumn {
+                    lastX = 0
+                    lastY += self.cellHeight
+                } else {
+                    lastX += smallCellWidth
+                }
+            }
+            cachAttributes[indexPath] = attributes
+            self.totalCellsHeight = lastY
+        }
+    }</string>
+				<key>leading</key>
+				<string>    var totalCellsHeight: CGFloat = 0
+    
+</string>
+				<key>trailing</key>
+				<string>
+    
+    override func layoutAttributesForElements(in rect: CGRect) -&gt; [UICollectionViewLayoutAttributes]? {
+</string>
+			</dict>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>myWeather/Weather/WeatherViewController.swift</string>
+					</dict>
+				</dict>
+				<key>type</key>
+				<string>DVTDocumentLocation</string>
+			</dict>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+	</array>
+</dict>
+</plist>

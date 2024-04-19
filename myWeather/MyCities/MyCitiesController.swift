@@ -51,8 +51,8 @@ class MyCitiesController: UITableViewController {
             guard let segueSource = segue.source as? AllCitiesController,
                   let indexPath = segueSource.tableView.indexPathForSelectedRow else { return }
             let city = segueSource.cities[indexPath.row]
-            if !cities.contains(city) {
-                cities.append(city)
+            if !cities.contains(city.title) {
+                cities.append(city.title)
                 tableView.reloadData()
             }
         default: return

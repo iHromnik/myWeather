@@ -9,12 +9,20 @@ import UIKit
 
 class AllCitiesController: UITableViewController {
     
-    var cities = [
-        "Moscow",
-        "Krasnoyarsk",
-        "London",
-        "Paris"
+    var cities: [City] = [
+        City(title: "Moskov", emblem: UIImage(named: "moskov") ?? UIImage()),
+        City(title: "Moskov", emblem: UIImage(named: "moskov") ?? UIImage()),
+        City(title: "Moskov", emblem: UIImage(named: "moskov") ?? UIImage()),
+        City(title: "Moskov", emblem: UIImage(named: "moskov") ?? UIImage()),
+        City(title: "Moskov", emblem: UIImage(named: "moskov") ?? UIImage())
     ]
+    
+//    var cities = [
+//        "Moscow",
+//        "Krasnoyarsk",
+//        "London",
+//        "Paris"
+//    ]
     
 
     override func viewDidLoad() {
@@ -43,8 +51,9 @@ class AllCitiesController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CityCell", for: indexPath) as! AllCitiesCell
 
-        let city = cities[indexPath.row]
-        cell.cityName.text = city
+        let city = self.cities[indexPath.row]
+//        cell.cityName.text = city
+        cell.confogure(city: city.title, emblem: city.emblem)
         return cell
     }
     

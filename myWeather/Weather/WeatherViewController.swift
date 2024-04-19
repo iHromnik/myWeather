@@ -65,3 +65,62 @@ extension WeatherViewController: UICollectionViewDataSource {
     
     
 }
+
+
+class WeatheCollectinViewLayout: UICollectionViewLayout {
+    var cachAttributes = [IndexPath: UICollectionViewLayoutAttributes]()
+    var columnsCount = 2
+    var cellHeight: CGFloat = 128
+    var totalCellsHeight: CGFloat = 0
+    
+    override func prepare() {
+        self.cachAttributes = [:]
+        guard let collectionView = self.collectionView else { return }
+        
+        let itemsCount = collectionView.numberOfItems(inSection: 0)
+        guard itemsCount > 0 else { return }
+        let bigCellWidth = collectionView.frame.width
+        let smallCellWidth = collectionView.frame.width / CGFloat(self.columnsCount)
+        
+        var lastY: CGFloat = 0
+        var lastX: CGFloat = 0
+        
+        for index in 0..<itemsCount {
+            let indexPath = IndexPath(item: index, section: 0)
+            let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
+            let isBigCell = (index + 1) % (self.columnsCount + 1) == 0
+            
+            if isBigCell {
+                attributes.frame = CGRect(x: 0, y: Int(lastY), width: Int(bigCellWidth), height: Int(self.cellHeight))
+                lastY += self.cellHeight
+            } else {
+                attributes.frame = CGRect(x: Int(lastX), y: Int(lastY), width: Int(smallCellWidth), height: Int(self.cellHeight))
+                let isLastColumn = (index + 2) % (self.columnsCount + 1) == 0 || index == itemsCount - 1
+                
+                if isLastColumn {
+                    lastX = 0
+                    lastY += self.cellHeight
+                } else {
+                    lastX += smallCellWidth
+                }
+            }
+            cachAttributes[indexPath] = attributes
+            self.totalCellsHeight = lastY
+        }
+    }
+    
+    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+        return cachAttributes.values.filter { attributes in
+            return rect.intersects(attributes.frame)
+        }
+    }
+    
+    override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+        return cachAttributes[indexPath]
+    }
+    
+    override var collectionViewContentSize: CGSize {
+        return CGSize(width: self.collectionView?.frame.width ?? 0, height: self.totalCellsHeight)
+    }
+    
+}

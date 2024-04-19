@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3002B2792B91BDFA0037DB0D /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3002B2782B91BDFA0037DB0D /* GradientView.swift */; };
+		304FC8402BCD95ED00565A8B /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304FC83F2BCD95ED00565A8B /* File.swift */; };
 		30801D172B7D13D400AA4E40 /* AllCitiesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30801D162B7D13D400AA4E40 /* AllCitiesController.swift */; };
 		30801D192B7D13F500AA4E40 /* AllCitiesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30801D182B7D13F500AA4E40 /* AllCitiesCell.swift */; };
 		30801D1C2B7D1DE600AA4E40 /* MyCitiesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30801D1B2B7D1DE600AA4E40 /* MyCitiesCell.swift */; };
@@ -47,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		3002B2782B91BDFA0037DB0D /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		304FC83F2BCD95ED00565A8B /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		30801D162B7D13D400AA4E40 /* AllCitiesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCitiesController.swift; sourceTree = "<group>"; };
 		30801D182B7D13F500AA4E40 /* AllCitiesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCitiesCell.swift; sourceTree = "<group>"; };
 		30801D1B2B7D1DE600AA4E40 /* MyCitiesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCitiesCell.swift; sourceTree = "<group>"; };
@@ -96,6 +98,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		304FC83E2BCD95D600565A8B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				304FC83F2BCD95ED00565A8B /* File.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		30801D132B7D133C00AA4E40 /* AllCities */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +136,7 @@
 		308CC3E32B74C46C00587D53 = {
 			isa = PBXGroup;
 			children = (
+				304FC83E2BCD95D600565A8B /* Model */,
 				308CC3EE2B74C46D00587D53 /* myWeather */,
 				308CC4082B74C47000587D53 /* myWeatherTests */,
 				308CC4122B74C47000587D53 /* myWeatherUITests */,
@@ -345,6 +356,7 @@
 				30801D172B7D13D400AA4E40 /* AllCitiesController.swift in Sources */,
 				308CC3F02B74C46D00587D53 /* AppDelegate.swift in Sources */,
 				30801D192B7D13F500AA4E40 /* AllCitiesCell.swift in Sources */,
+				304FC8402BCD95ED00565A8B /* File.swift in Sources */,
 				30801D1C2B7D1DE600AA4E40 /* MyCitiesCell.swift in Sources */,
 				30801D1E2B7D1DFD00AA4E40 /* MyCitiesController.swift in Sources */,
 				308CC3F22B74C46D00587D53 /* SceneDelegate.swift in Sources */,
